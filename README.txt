@@ -1,2 +1,2 @@
 Hello World
-... from Xcode4 :)
+... from vi :)
