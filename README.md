@@ -1,5 +1,3 @@
-# My Branch #
+# MarkDown Test #
 
-	Code block test
-
-ok.
+Test Link to [LINICKX.com](http://www.linickx.com)
