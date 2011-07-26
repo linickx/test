@@ -1,2 +1,2 @@
 Hello World
-... from vi :)
+... from github4mac :)
