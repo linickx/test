@@ -4,7 +4,7 @@ python:
   - "3.5"
 # Deps
 before_install:
-	- ifconfig -a
+  - ifconfig -a
 addons:
   apt:
     packages:
