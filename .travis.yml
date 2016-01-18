@@ -15,7 +15,7 @@ install:
 - ls -l
 - pip install .
 - ifconfig -a
-- dynamips -s 0:0:tap:tap0 -P 3725 -T 2001 --idle-pc=0x607081e0 -C r1.txt c3725-advsecurityk9-mz.124-25c.bin &
+- sudo dynamips -s 0:0:tap:tap0 -P 3725 -T 2001 --idle-pc=0x607081e0 -C r1.txt c3725-advsecurityk9-mz.124-25c.bin &
 - sleep 60
 - sudo ifconfig tap0 inet 1.1.1.1 netmask 255.255.255.252
 - ping -c 4 1.1.1.2
