@@ -1,7 +1,7 @@
 sudo: required
 language: python
 env:
-  secure: gqRdZWzKVn5L5oi6F4cSsPi6sIqbb9nR56IAWOhZSTiHA3fSSBt9W5tPBzMOTHJlkDObysbB7faC/k47YTYaaTpUch3epicR1UBJArDyE0ucIN5ywkt82KhqPKumuur53FMOKj+YVZ9lH3gHqXzBDVxLvqzdenLyu5JvT4ZiKHw=
+  secure: PAsZwS8foVUSteR87Zjsi97TLfNOWvJA6sWdPt9+1pnEmEuJRt4qwPu4jmpMx+0BdH6wbPbNwhmZUV/iNsjp0OffY+EZTyr+giV/OxaOT8ZdKWjingLdk+Gwz3fobE1JhqsN58eWxZA5vab3hUXou1Sz+8SQXVov2dMRx0MC3ls=
 python:
 - '2.6'
 - '3.5'
@@ -10,14 +10,14 @@ before_install:
 - sudo /sbin/modprobe tun
 - sudo apt-get update -qq
 - sudo apt-get install -qq dynamips
-- wget $IOS_URL
+- wget -q $IOS_URL
 install:
 - ls -l
 - pip install .
-- sudo ifconfig tap0 inet 1.1.1.1 netmask 255.255.255.252
 - ifconfig -a
 - dynamips -s 0:0:tap:tap0 -P 3725 -T 2001 --idle-pc=0x607081e0 -C r1.txt c3725-advsecurityk9-mz.124-25c.bin &
 - sleep 60
+- sudo ifconfig tap0 inet 1.1.1.1 netmask 255.255.255.252
 - ping -c 4 1.1.1.2
 script: py.test
 branches:
