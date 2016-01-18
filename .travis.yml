@@ -7,7 +7,7 @@ python:
 # Deps
 before_install:
   - ifconfig -a
-  - sudo /sbin/modprobe tap
+  - sudo /sbin/modprobe tun
   - sudo apt-get update -qq
   - sudo apt-get install -qq dynamips
 install:
