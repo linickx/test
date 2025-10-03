@@ -6,12 +6,14 @@ on:
       message:
         description: 'Message to print'
         required: false
-        default: 'Hello, World!'
+      resumeUrl:
+        description: 'n8n thing'
+        required: false
 
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "MSG[1] -- $MESSAGE"
-          echo "MSG[2] -- ${{ inputs.message }}"
+          echo "MSG[1] --  ${{ inputs.message }}"
+          echo "MSG[2] --  ${{ inputs.resumeUrl }}"
