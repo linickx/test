@@ -8,10 +8,5 @@ jobs:
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v4  
-    - name: Set env
-      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-    - name: Test Env
-      run: |
-        echo ${{ env.RELEASE_VERSION }}
     - name: Build the Docker image
       run: docker buildx build --platform linux/amd64,linux/arm64 . --file Dockerfile -t linickx/test:latest
